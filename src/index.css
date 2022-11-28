@@ -1,9 +1,175 @@
-body {
-  margin: 0;
- background-color: #000000;
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
 }
+
+a,
+NavLink {
+  text-decoration: none;
+}
+
+html {
+  /* font-size: 15px; */
+  /* 15/16=93.75 */
+  font-size: 93.75%; /* 15px*/
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  background-color: #dee2e6;
+}
+
+
+.App{
+  margin: 1rem 0;
+  position: relative;
+}
+
+/* global class */
+.serch-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 30px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.input-field{
+  padding: 8px 29px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  margin: 1rem 0;
+  box-shadow: 0 0 10px 1px rgb(0 0 0 / 10%);
+}
+
+
+.microphone-section{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 52%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+
+.first-btn{
+  border: none;
+  padding: 10px;
+  font-weight: 600px;
+  border-radius: 6px;
+  background-color: #1971c2;
+  margin: 0 1rem;
+}
+
+.second-btn{
+  border: none;
+  padding: 10px;
+  font-weight: 600px;
+  border-radius: 6px;
+  margin: 0 1rem;
+}
+
+.first-btn:hover{
+  background-color: #307fc8 ;
+}
+
+
+
+/* secondary */
+
+.secondary-btn{
+  border: none;
+  padding: 10px;
+  font-weight: 600px;
+  border-radius: 6px;
+  background-color: #343a40;
+  margin: 0 1rem;
+
+}
+/* Success */
+.success-btn{
+  border: none;
+  padding: 10px;
+  font-weight: 600px;
+  border-radius: 6px;
+  background-color: #099268;
+  margin: 0 1rem;
+
+}
+
+.success-btn:hover{
+  background-color: #495057;
+  border: none;
+  padding: 10px;
+  font-weight: 600px;
+  border-radius: 6px;
+  margin: 0 1rem;
+}
+/* warnig */
+.warn-btn{
+  border: none;
+  padding: 10px;
+  font-weight: 600px;
+  border-radius: 6px;
+  background-color: #e03131;
+  margin: 0 1rem;
+
+}
+/* danger */
+.danger-btn{
+  border: none;
+  padding: 10px;
+  font-weight: 600px;
+  border-radius: 6px;
+  background-color: #e03131;
+  margin: 0 1rem;
+}
+
+.danger-btn:hover{
+  border: none;
+  padding: 10px;
+  font-weight: 600px;
+  border-radius: 6px;
+  background-color: #e34646;
+  margin: 0 1rem;
+}
+
+
+.ternary-btn{
+  border: none;
+  /* padding: 10px; */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  font-weight: 600px;
+  /* border-radius: 10px; */
+  background-color: aqua;
+  margin: 0 1rem;
+}
+
+
+
+
+
