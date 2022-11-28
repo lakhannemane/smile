@@ -12,24 +12,27 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Button text="click me" styleButton="first-btn" OK={handleClick} />
-        <Button
-          text="click me"
-          styleButton="second-btn"
-          OK={secondbtnHandler}
-        />
-        <Button
-          text="click me"
-          styleButton="success-btn"
-          OK={secondbtnHandler}
-        />
-        <Button text="warning" styleButton="warn-btn" OK={secondbtnHandler} />
-        <Button
-          text="click me"
-          styleButton="second-btn"
-          OK={secondbtnHandler}
-        />
-        <Button text={132} styleButton="danger-btn" OK={secondbtnHandler} />
+        {/* button group */}
+        <div className="buttons-group">
+          <Button text="click me" styleButton="first-btn" OK={handleClick} />
+          <Button
+            text="click me"
+            styleButton="second-btn"
+            OK={secondbtnHandler}
+          />
+          <Button
+            text="click me"
+            styleButton="success-btn"
+            OK={secondbtnHandler}
+          />
+          <Button text="warning" styleButton="warn-btn" OK={secondbtnHandler} />
+          <Button
+            text="click me"
+            styleButton="second-btn"
+            OK={secondbtnHandler}
+          />
+          <Button text={132} styleButton="danger-btn" OK={secondbtnHandler} />
+        </div>
       </div>
     </div>
   );
