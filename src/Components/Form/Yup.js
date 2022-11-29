@@ -1,6 +1,10 @@
 import { useFormik } from "formik";
 import React from "react";
-const Yup = () => {
+import * as Yup from "yup";
+
+// 🗒️Yup is a schema builder for runtime value parsing and validation. Define a schema, transform a value to match, assert the shape of an existing value, or both. Yup schema are extremely expressive and allow modeling complex, interdependent validations, or value transformation.
+
+const YupForm = () => {
   const initialValues = {
     name: "",
     email: "",
@@ -11,40 +15,18 @@ const Yup = () => {
     console.log("form Data", values);
   };
 
-  const validate = (values) => {
-    // must be satify condtion
-    // step1 create obect
-    const errors = {};
-
-    if (!values.name) {
-      errors.name = "Required";
-    }
-    if (!values.email) {
-      errors.email = "Required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email address";
-    }
-
-    if (!values.channel) {
-      errors.channel = "Required";
-    }
-
-    return errors;
-  };
-
-  //useFormik return object that contain in formik variable
-
-  // ⚠️ Fromik Readiablity is Not better
-  const formik = useFormik({
-    //  first step pass property and pass intitalvalues
-    initialValues,
-    // step-2 onsubmit take all property as an agument
-    onSubmit,
-    // step3: validate
-    validate,
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Required!"),
+    email: Yup.string().email("Invalid email format").required("Required"),
+    channel: Yup.string().required("Required"),
   });
 
-  // console.log("formik Values", formik.values);
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
+
   return (
     <div>
       <form onSubmit={formik.handleSubmit}>
@@ -59,7 +41,6 @@ const Yup = () => {
             value={formik.values.name}
           />
 
-          {/* touched is function to keep track visited fields */}
           {formik.touched.name && formik.errors.name ? (
             <div className="error">{formik.errors.name}</div>
           ) : (
@@ -73,7 +54,6 @@ const Yup = () => {
             id="email"
             name="email"
             onChange={formik.handleChange}
-            //Handleblur this is used for knowning which field user clicked
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
@@ -105,6 +85,4 @@ const Yup = () => {
   );
 };
 
-export default Yup;
-
-// handleBlur this is also eventhandler checked whether perticular filed is visited or not
+export default YupForm;

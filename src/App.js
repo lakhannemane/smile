@@ -1,7 +1,7 @@
 import React from "react";
 // import axiosInstance from "./Axios/AxiosInstance";
 import FormLogin from "./Components/Form/Index";
-import Yup from "./Components/Form/Yup";
+import YupForm from "./Components/Form/Yup";
 // import Button from "./Components/Buttons/Index";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <hr />
         <h5>Another for using alternative aproach of validation</h5>
         <hr />
-        <Yup />
+        <YupForm />
         {/* button group */}
         {/* <div className="buttons-group">
           <Button text="click me" styleButton="first-btn" OK={handleClick} />
